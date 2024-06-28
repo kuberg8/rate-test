@@ -44,7 +44,7 @@
 import { ref, watch, onMounted, computed } from 'vue'
 
 type Tariff = 'Стандартный' | 'Продвинутый'
-type Currency = 'Китайский юань' | 'Казахстанский тенге'
+type Currency = 'Китайский юань' | 'Казахстанских тенге'
 type Period = 'month' | 'year'
 type PriceData = {
   month: number
@@ -73,14 +73,14 @@ const toCurrency = (number: number, currency?: string) =>
 const selectedTariff = ref<Tariff | null>(null)
 const selectedCurrency = ref<Currency | null>(null)
 const selectedPeriod = ref<Period | null>(null)
-const currencies = ref<Currency[]>(['Китайский юань', 'Казахстанский тенге'])
+const currencies = ref<Currency[]>(['Китайский юань', 'Казахстанских тенге'])
 const prices: Record<Tariff, PriceData> = {
   Стандартный: { month: 100, year: 1000 },
   Продвинутый: { month: 150, year: 1400 },
 }
 const exchangeRate: Record<string, ExchangeRateType> = {
   'Китайский юань': { value: 0, code: '' },
-  'Казахстанский тенге': { value: 0, code: '' },
+  'Казахстанских тенге': { value: 0, code: '' },
 }
 const totalAmount = ref<number | null>(null)
 const discountAmount = ref<number | null>(null)
